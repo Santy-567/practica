@@ -53,6 +53,7 @@ position = Vector2(-289, -340)
 position = Vector2(-388, -1042)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("person")]
+position_smoothing_enabled = true
 script = ExtResource("8_1bh4s")
 person = NodePath("../CharacterBody2D")
 
