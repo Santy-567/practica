@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://oyxw1blr0sku"]
+
+[ext_resource type="Texture2D" uid="uid://bkqyd6mlg3uig" path="res://Imagenes/ImgPlat/terrain_grass_block_bottom_left.png" id="1_m7y65"]
+[ext_resource type="Texture2D" uid="uid://bt7hrkv6e0bdg" path="res://Imagenes/ImgPlat/terrain_grass_block_bottom_right.png" id="2_aff36"]
+[ext_resource type="Texture2D" uid="uid://gexb2plb5s7y" path="res://Imagenes/ImgPlat/terrain_grass_block_bottom.png" id="3_g0xv3"]
+[ext_resource type="Texture2D" uid="uid://d2r8voeqve5ne" path="res://Imagenes/ImgPlat/terrain_grass_block_top.png" id="4_yjlhf"]
+[ext_resource type="Texture2D" uid="uid://cu033luaygvmx" path="res://Imagenes/ImgPlat/terrain_grass_block_top_left.png" id="5_n8nhf"]
+[ext_resource type="Texture2D" uid="uid://fdmjxe2jc476" path="res://Imagenes/ImgPlat/terrain_grass_block_top_right.png" id="6_ejkxg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xo5p"]
+size = Vector2(384, 28)
+
+[node name="TierraBig" type="StaticBody2D"]
+
+[node name="TerrainGrassBlockBottomLeft" type="Sprite2D" parent="."]
+position = Vector2(-160, 64)
+texture = ExtResource("1_m7y65")
+
+[node name="TerrainGrassBlockBottomRight" type="Sprite2D" parent="."]
+position = Vector2(160, 64)
+texture = ExtResource("2_aff36")
+
+[node name="TerrainGrassBlockBottom" type="Sprite2D" parent="."]
+position = Vector2(-96, 64)
+texture = ExtResource("3_g0xv3")
+
+[node name="TerrainGrassBlockBottom2" type="Sprite2D" parent="."]
+position = Vector2(-32, 64)
+texture = ExtResource("3_g0xv3")
+
+[node name="TerrainGrassBlockBottom3" type="Sprite2D" parent="."]
+position = Vector2(32, 64)
+texture = ExtResource("3_g0xv3")
+
+[node name="TerrainGrassBlockBottom4" type="Sprite2D" parent="."]
+position = Vector2(96, 64)
+texture = ExtResource("3_g0xv3")
+
+[node name="TerrainGrassBlockTop" type="Sprite2D" parent="."]
+position = Vector2(-32, 0)
+texture = ExtResource("4_yjlhf")
+
+[node name="TerrainGrassBlockTop2" type="Sprite2D" parent="."]
+position = Vector2(-96, 0)
+texture = ExtResource("4_yjlhf")
+
+[node name="TerrainGrassBlockTop3" type="Sprite2D" parent="."]
+position = Vector2(32, 0)
+texture = ExtResource("4_yjlhf")
+
+[node name="TerrainGrassBlockTop4" type="Sprite2D" parent="."]
+position = Vector2(96, 0)
+texture = ExtResource("4_yjlhf")
+
+[node name="TerrainGrassBlockTopLeft" type="Sprite2D" parent="."]
+position = Vector2(-160, 0)
+texture = ExtResource("5_n8nhf")
+
+[node name="TerrainGrassBlockTopRight" type="Sprite2D" parent="."]
+position = Vector2(160, 0)
+texture = ExtResource("6_ejkxg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -18)
+shape = SubResource("RectangleShape2D_5xo5p")
+one_way_collision = true

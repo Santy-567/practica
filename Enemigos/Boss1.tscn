@@ -1,0 +1,153 @@
+[gd_scene load_steps=8 format=3 uid="uid://33fy2orbkrse"]
+
+[ext_resource type="Texture2D" uid="uid://dcm5x284ph1xc" path="res://Imagenes/ImgPer/slime_block_jump.png" id="1_fodjt"]
+[ext_resource type="Texture2D" uid="uid://dwo8pa707h6c6" path="res://Imagenes/ImgPer/saw_rest.png" id="2_jlbgx"]
+[ext_resource type="Texture2D" uid="uid://bxjevxmdqdxww" path="res://Imagenes/ImgPer/snail_shell.png" id="3_2abeb"]
+
+[sub_resource type="Animation" id="Animation_jlvek"]
+resource_name = "Reposo"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SlimeBlockJump/SawRest:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-18, 13), Vector2(-7, 8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SlimeBlockJump/SawRest/SnailShell:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_g06hl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SlimeBlockJump/SawRest:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-21, 11)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SlimeBlockJump/SawRest/SnailShell:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SlimeBlockJump:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cgum3"]
+resource_name = "Lanza"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SlimeBlockJump:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1, 1), Vector2(-1, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SlimeBlockJump/SawRest:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-18, 13), Vector2(39, 0), Vector2(2, -51), Vector2(45, -4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SlimeBlockJump/SawRest/SnailShell:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vyye1"]
+_data = {
+&"Lanza": SubResource("Animation_cgum3"),
+&"RESET": SubResource("Animation_g06hl"),
+&"Reposo": SubResource("Animation_jlvek")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="SlimeBlockJump" type="Sprite2D" parent="."]
+position = Vector2(-2, 1)
+texture = ExtResource("1_fodjt")
+
+[node name="SawRest" type="Sprite2D" parent="SlimeBlockJump"]
+position = Vector2(-21, 11)
+scale = Vector2(0.28125, 0.273438)
+texture = ExtResource("2_jlbgx")
+
+[node name="SnailShell" type="Sprite2D" parent="SlimeBlockJump/SawRest"]
+visible = false
+position = Vector2(74.6665, 0)
+scale = Vector2(3.51028, 3.59286)
+texture = ExtResource("3_2abeb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vyye1")
+}
+
+[node name="SnailShell" type="Sprite2D" parent="."]
+position = Vector2(-62, 1)
+texture = ExtResource("3_2abeb")
+
+[node name="SnailShell3" type="Sprite2D" parent="."]
+position = Vector2(-77, -19)
+texture = ExtResource("3_2abeb")
+
+[node name="SnailShell2" type="Sprite2D" parent="."]
+position = Vector2(-95, -1)
+texture = ExtResource("3_2abeb")

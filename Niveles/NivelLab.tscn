@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://48rkf251n8ia"]
+
+[ext_resource type="PackedScene" uid="uid://cghdlk6ppqa7y" path="res://Plataformas/Lab1.tscn" id="1_bwfon"]
+[ext_resource type="PackedScene" uid="uid://bsayxcrwy866q" path="res://Personajes/Yellow2.tscn" id="2_0ecdc"]
+[ext_resource type="Script" uid="uid://cg0oncnu86e6n" path="res://Personajes/yellow_2.gd" id="3_3o2ar"]
+[ext_resource type="Script" uid="uid://bdxp3dinr1d4c" path="res://Niveles/camera_2d.gd" id="4_cdm4v"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Lab1" parent="." instance=ExtResource("1_bwfon")]
+position = Vector2(32, -17)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_0ecdc")]
+position = Vector2(191, 314)
+script = ExtResource("3_3o2ar")
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("person")]
+script = ExtResource("4_cdm4v")
+person = NodePath("../CharacterBody2D")

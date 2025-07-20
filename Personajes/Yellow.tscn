@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://6xpxak8mtw30"]
+
+[ext_resource type="Texture2D" uid="uid://ck8ow6vk2raoh" path="res://Imagenes/ImgPer/character_yellow_front.png" id="1_erble"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elnvj"]
+size = Vector2(78, 97)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CharacterYellowFront" type="Sprite2D" parent="."]
+texture = ExtResource("1_erble")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 15.5)
+shape = SubResource("RectangleShape2D_elnvj")
