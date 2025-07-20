@@ -8,9 +8,10 @@ extends CharacterBody2D
 func _physics_process(delta):
 	
 	#Saltar
-	var Salto = Input.is_action_just_pressed("Arriba")
-	if Salto:
-		velocity.y = velocity.y - jump
+	if is_on_floor():
+		var Salto = Input.is_action_just_pressed("Arriba")
+		if Salto:
+			velocity.y = velocity.y - jump
 	
 	#Mover Horizontal
 	var Movi = Input.get_axis("Izquierda","Derecha")
