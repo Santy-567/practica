@@ -38,7 +38,7 @@ position = Vector2(-443, -384)
 position = Vector2(341, -668)
 
 [node name="TierraMed" parent="." instance=ExtResource("5_1i4od")]
-position = Vector2(-481, -977)
+position = Vector2(-500, -1227)
 
 [node name="RigidBody2D" parent="." instance=ExtResource("5_6vjlt")]
 position = Vector2(-205, -925)
@@ -46,11 +46,8 @@ position = Vector2(-205, -925)
 [node name="RigidBody2D3" parent="." instance=ExtResource("5_6vjlt")]
 position = Vector2(140, -613)
 
-[node name="RigidBody2D4" parent="." instance=ExtResource("5_6vjlt")]
-position = Vector2(-289, -340)
-
 [node name="Boss" parent="." instance=ExtResource("7_j01d1")]
-position = Vector2(-388, -1042)
+position = Vector2(-407, -1292)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("person")]
 position_smoothing_enabled = true
@@ -61,3 +58,9 @@ person = NodePath("../CharacterBody2D")
 position = Vector2(-90, -100)
 script = ExtResource("2_j01d1")
 speed = 250
+
+[node name="TierraPeq" parent="." instance=ExtResource("3_6vjlt")]
+position = Vector2(-469, -998)
+
+[node name="TierraPeq2" parent="." instance=ExtResource("3_6vjlt")]
+position = Vector2(-228, -1116)
