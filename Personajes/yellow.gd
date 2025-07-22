@@ -18,16 +18,24 @@ func _physics_process(delta):
 	var Movi = Input.get_axis("Izquierda","Derecha")
 	velocity.x = speed * Movi
 	
-	if Movi == 0:
-		AniPlayer.play("Quieto")
-		
-	elif  Movi > 0:
-		AniPlayer.play("Adelante")
-		
-	else:
-		AniPlayer.play("Atras")
 	#Gravedad
 	if not is_on_floor():
 		velocity.y = velocity.y + gravity * delta
+	
+	#Animacion de mov
+	if Movi == 0:
+		AniPlayer.play("Quieto")
+		
+	elif  Movi > 0 and is_on_floor():
+		AniPlayer.play("Adelante")
+		
+	elif Movi < 0 and is_on_floor():
+		AniPlayer.play("Atras")
+	
+	elif  Movi > 0 and not is_on_floor():
+		AniPlayer.play("SaltoAde")
+		
+	elif Movi < 0 and not is_on_floor():
+		AniPlayer.play("SaltoAtr")
 		
 	move_and_slide()
