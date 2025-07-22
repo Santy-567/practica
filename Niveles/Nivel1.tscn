@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://hdpt1okc5ssq"]
+[gd_scene load_steps=12 format=3 uid="uid://hdpt1okc5ssq"]
 
 [ext_resource type="PackedScene" uid="uid://oyxw1blr0sku" path="res://Plataformas/TierraBig.tscn" id="1_77p31"]
+[ext_resource type="Texture2D" uid="uid://co5xmqmr31h5h" path="res://Imagenes/ImgPlat/background_clouds.png" id="1_hxbhg"]
 [ext_resource type="PackedScene" uid="uid://6xpxak8mtw30" path="res://Personajes/Yellow.tscn" id="2_2up02"]
 [ext_resource type="Script" uid="uid://dajubqbpcqrfl" path="res://Personajes/yellow.gd" id="2_j01d1"]
+[ext_resource type="Texture2D" uid="uid://dacv5bp5esuqx" path="res://Imagenes/ImgPlat/background_fade_desert.png" id="2_qf4rs"]
 [ext_resource type="PackedScene" uid="uid://1qfg7q1vc6f3" path="res://Plataformas/TierraPeq.tscn" id="3_6vjlt"]
 [ext_resource type="PackedScene" uid="uid://cg72lifvco02y" path="res://Plataformas/PlatsTierra1.tscn" id="4_2up02"]
 [ext_resource type="PackedScene" uid="uid://b7xl5erm6d375" path="res://Plataformas/TierraMed.tscn" id="5_1i4od"]
@@ -12,6 +14,36 @@
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(665, 635)
+
+[node name="BackgroundClouds" type="Sprite2D" parent="."]
+position = Vector2(-67, -1536)
+scale = Vector2(3, 3)
+texture = ExtResource("1_hxbhg")
+
+[node name="BackgroundFadeDesert" type="Sprite2D" parent="."]
+position = Vector2(-68, -189)
+scale = Vector2(3, 3)
+texture = ExtResource("2_qf4rs")
+
+[node name="BackgroundClouds2" type="Sprite2D" parent="."]
+position = Vector2(-1603, -1536)
+scale = Vector2(3, 3)
+texture = ExtResource("1_hxbhg")
+
+[node name="BackgroundFadeDesert2" type="Sprite2D" parent="."]
+position = Vector2(-1604, -189)
+scale = Vector2(3, 3)
+texture = ExtResource("2_qf4rs")
+
+[node name="BackgroundClouds3" type="Sprite2D" parent="."]
+position = Vector2(1469, -1536)
+scale = Vector2(3, 3)
+texture = ExtResource("1_hxbhg")
+
+[node name="BackgroundFadeDesert3" type="Sprite2D" parent="."]
+position = Vector2(1468, -189)
+scale = Vector2(3, 3)
+texture = ExtResource("2_qf4rs")
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("3_6vjlt")]
 position = Vector2(286, -94)
@@ -54,13 +86,13 @@ position_smoothing_enabled = true
 script = ExtResource("8_1bh4s")
 person = NodePath("../CharacterBody2D")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_2up02")]
-position = Vector2(-90, -100)
-script = ExtResource("2_j01d1")
-speed = 250
-
 [node name="TierraPeq" parent="." instance=ExtResource("3_6vjlt")]
 position = Vector2(-469, -998)
 
 [node name="TierraPeq2" parent="." instance=ExtResource("3_6vjlt")]
 position = Vector2(-228, -1116)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_2up02")]
+position = Vector2(-90, -100)
+script = ExtResource("2_j01d1")
+speed = 250
