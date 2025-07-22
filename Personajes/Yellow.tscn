@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://6xpxak8mtw30"]
+[gd_scene load_steps=10 format=3 uid="uid://6xpxak8mtw30"]
 
 [ext_resource type="Texture2D" uid="uid://ck8ow6vk2raoh" path="res://Imagenes/ImgPer/character_yellow_front.png" id="1_erble"]
 [ext_resource type="Texture2D" uid="uid://blqo1iusleo2m" path="res://Imagenes/ImgPer/character_yellow_walk_a.png" id="2_elnvj"]
+[ext_resource type="Texture2D" uid="uid://ceniykx3qe12d" path="res://Imagenes/ImgPer/character_yellow_walk_b.png" id="3_efv6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elnvj"]
 size = Vector2(78, 97)
 
 [sub_resource type="Animation" id="Animation_ay7iu"]
 resource_name = "Adelante"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -39,10 +41,22 @@ tracks/2/path = NodePath("CharacterYellowWalkA:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [true]
+"values": [true, false, true, false, true, false, true, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CharacterYellowWalkB:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false]
 }
 
 [sub_resource type="Animation" id="Animation_ni2kt"]
@@ -161,6 +175,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CharacterYellowWalkB:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a2780"]
 _data = {
@@ -181,6 +207,12 @@ visible = false
 position = Vector2(1.19209e-06, 0.499989)
 scale = Vector2(0.46875, 0.511719)
 texture = ExtResource("2_elnvj")
+
+[node name="CharacterYellowWalkB" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1, 3.5)
+scale = Vector2(0.46875, 0.480469)
+texture = ExtResource("3_efv6c")
 
 [node name="CharacterYellowWalkA2" type="Sprite2D" parent="."]
 visible = false
