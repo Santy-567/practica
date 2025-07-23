@@ -46,7 +46,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("2_qf4rs")
 
 [node name="Boss" parent="." instance=ExtResource("7_j01d1")]
-position = Vector2(-407, -1290)
+position = Vector2(-407, -1285)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("3_6vjlt")]
 position = Vector2(286, -94)
