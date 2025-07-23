@@ -16,7 +16,7 @@
 position = Vector2(665, 635)
 
 [node name="BackgroundClouds" type="Sprite2D" parent="."]
-position = Vector2(-67, -1536)
+position = Vector2(-68, -1536)
 scale = Vector2(3, 3)
 texture = ExtResource("1_hxbhg")
 
@@ -26,7 +26,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("2_qf4rs")
 
 [node name="BackgroundClouds2" type="Sprite2D" parent="."]
-position = Vector2(-1603, -1536)
+position = Vector2(-1604, -1536)
 scale = Vector2(3, 3)
 texture = ExtResource("1_hxbhg")
 
@@ -36,7 +36,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("2_qf4rs")
 
 [node name="BackgroundClouds3" type="Sprite2D" parent="."]
-position = Vector2(1469, -1536)
+position = Vector2(1468, -1536)
 scale = Vector2(3, 3)
 texture = ExtResource("1_hxbhg")
 
